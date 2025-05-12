@@ -1,0 +1,30 @@
+name: DesignSandbox
+version: '1.0-SNAPSHOT'
+main: com.example.designsandbox.DesignSandboxPlugin
+api-version: '1.21'
+depend: [Multiverse-Core]
+softdepend: [PerWorldInventory, LuckPerms]
+authors: [YourName]
+description: Provides players with personal creative-mode sandbox worlds for design testing.
+website: https://github.com/yourusername/design-sandbox
+
+commands:
+  design:
+    description: Main command for managing your design sandbox world
+    usage: |
+      §6Design-Sandbox Commands:
+      §f/design enter §7- Enter your design sandbox world
+      §f/design exit §7- Return to the survival world
+      §f/design reset §7- Reset your sandbox to match current survival world
+    aliases: [ds]
+    permission: designsandbox.use
+
+permissions:
+  designsandbox.use:
+    description: Allows use of the design sandbox feature
+    default: true
+  designsandbox.admin:
+    description: Allows use of administrative commands
+    default: op
+    children:
+      designsandbox.use: true 

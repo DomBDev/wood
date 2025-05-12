@@ -1,0 +1,85 @@
+# Design-Sandbox Configuration
+
+# World Settings
+world:
+  # Radius in blocks around player to copy (max 2000)
+  radius: 1000
+  # Directory to store sandbox worlds (relative to server root)
+  directory: "designs"
+  # Prefix for sandbox world names
+  name-prefix: "design_"
+  # Default game rules for sandbox worlds
+  gamerules:
+    doMobSpawning: false
+    doDaylightCycle: false
+    doWeatherCycle: false
+    doFireTick: false
+    mobGriefing: false
+    keepInventory: true
+
+# Cooldown Settings (in seconds)
+cooldown:
+  # Cooldown between /design enter commands (0 to disable)
+  enter: 0
+  # Cooldown between /design reset commands
+  reset: 300
+
+# Inventory Management
+inventory:
+  # Whether to use PerWorldInventory if available (false for built-in system)
+  use-pwi: true
+  # Save creative inventory between sessions
+  persist-creative: true
+  # Clear inventory on reset
+  clear-on-reset: true
+  # Separate ender chest contents
+  separate-enderchest: true
+
+# World Maintenance
+maintenance:
+  # Auto-purge old sandbox worlds
+  purge:
+    enabled: true
+    # Days of inactivity before purging
+    days-inactive: 30
+    # Run purge check every X hours
+    check-interval: 24
+  # Unload inactive worlds
+  unload:
+    enabled: true
+    # Minutes of inactivity before unloading
+    timeout: 10
+
+# Performance
+performance:
+  # Maximum concurrent world copies
+  max-concurrent-copies: 3
+  # Delay between file operations (ms)
+  copy-delay: 50
+  # Progress update interval (ticks)
+  progress-interval: 20
+
+# Messages
+messages:
+  prefix: "§8[§bDesign§8] §7"
+  enter: "Entering your design sandbox..."
+  exit: "Returning to survival world..."
+  reset: "Resetting your sandbox world..."
+  no-permission: "§cYou don't have permission to use this command."
+  cooldown: "§cPlease wait {time} before using this command again."
+  world-creating: "Creating your sandbox world... ({progress}%)"
+  world-created: "Sandbox world created successfully!"
+  world-loading: "Loading your sandbox world..."
+  world-unloading: "Unloading your sandbox world..."
+  world-reset: "Your sandbox has been reset to match the current survival world."
+  error:
+    world-creation: "§cFailed to create sandbox world: {error}"
+    world-load: "§cFailed to load sandbox world: {error}"
+    world-unload: "§cFailed to unload sandbox world: {error}"
+    world-reset: "§cFailed to reset sandbox world: {error}"
+
+# Debug Settings
+debug:
+  enabled: false
+  log-level: INFO
+  log-file: "plugins/DesignSandbox/debug.log" 
